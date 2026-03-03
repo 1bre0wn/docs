@@ -1,0 +1,61 @@
+---
+title: Microsoft 365 Whitelisting
+---
+
+# Configuración de Entrega Avanzada
+
+Para configurar simulaciones de phishing y asegurar que los correos lleguen correctamente, debemos acceder a la consola de **Microsoft 365 Defender**.
+
+## 1. Acceso a la Consola
+Puedes acceder al panel de Entrega Avanzada de dos formas:
+
+* **Acceso directo:** [Panel de Entrega Avanzada](https://security.microsoft.com/advanceddelivery?viewid=PhishingSimulation)
+* **Desde el menú lateral:** Ve a [security.microsoft.com](https://security.microsoft.com/) > **Correo electrónico y colaboración** > **Directivas y reglas** > **Reglas de amenazas** > **Entrega avanzada**.
+
+<img className="mx-auto block" src="Fotos/WhiteList%20Microsoft%20M365/image1.png" />
+
+<img className="mx-auto block" src="Fotos/WhiteList%20Microsoft%20M365/image2.png" />
+---
+
+## 2. Configuración de la Simulación de Phishing
+
+Una vez en el apartado de **Simulación de suplantación de identidad (phishing)**, haz clic en el botón **Editar**.
+
+<img className="mx-auto block" src="Fotos/WhiteList%20Microsoft%20M365/image3.png" />
+
+### Opción A: Añadir Dominios
+Si deseas permitir remitentes por dominio:
+
+1. Selecciona el campo de **Dominios**.
+2. Introduce el dominio deseado.
+<img className="mx-auto block" src="Fotos/WhiteList%20Microsoft%20M365/image4.png" />
+
+# **MODIFICAR FOTO DE ARRIBA!!!!**
+
+> **⚠️ NOTA IMPORTANTE:** Verifica que el dominio esté bien escrito. Tras escribirlo o pegarlo, **haz clic en la previsualización** que aparece debajo del cuadro de texto. Si no seleccionas la sugerencia, es posible que el sistema no guarde el cambio correctamente.
+
+
+
+### Opción B: Añadir Direcciones IP
+Si prefieres filtrar por la IP de origen:
+
+1. Selecciona el campo de **Direcciones IP de envío**.
+2. Escribe la dirección IP.
+
+<img className="mx-auto block" src="Fotos/WhiteList%20Microsoft%20M365/image5.png" />
+
+> **⚠️ NOTA IMPORTANTE:** Asegúrate de que la IP sea correcta y presiona la tecla **INTRO** después de escribirla para que el sistema la reconozca y la fije como una etiqueta.
+
+---
+
+## 3. Guardar y Verificar
+
+Para finalizar el proceso:
+
+1. Desliza hasta el final del panel lateral y haz clic en el botón **Guardar**.
+
+<img className="mx-auto block" src="Fotos/WhiteList%20Microsoft%20M365/image6.png" />
+
+2. **Verificación:** Regresa al panel principal de Entrega Avanzada, recarga la página y comprueba que los dominios o IPs aparecen correctamente listados en la tabla.
+
+<img className="mx-auto block" src="Fotos/WhiteList%20Microsoft%20M365/image7.png" />
