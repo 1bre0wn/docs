@@ -1,0 +1,78 @@
+---
+title: "Destinatarios"
+description: "Administra la base de datos de empleados, organiza grupos y segmenta tus campañas de seguridad."
+---
+
+Los **Destinatarios** son las personas de tu organización que participarán en los simulacros de phishing y recibirán los cursos de formación. A diferencia de los usuarios, los destinatarios no tienen acceso al panel de administración; su interacción con WhiteShark es a través de los correos y contenidos que tú les envías.
+
+---
+
+## El Listado de Destinatarios
+
+En la vista principal de `/destinatarios`, dispones de una tabla potente para gestionar a todo tu personal:
+
+* **Búsqueda Inteligente:** Filtra por nombre, email o departamento en tiempo real.
+* **Segmentación por Grupos:** Visualiza rápidamente a qué equipos pertenece cada persona mediante etiquetas de colores.
+* **Métricas de Participación:** Consulta cuántas campañas ha recibido cada empleado y cuándo fue su última actividad.
+
+---
+
+## Organización por Grupos
+
+La segmentación es la clave para una formación efectiva. No querrás enviar el mismo simulacro de phishing a un desarrollador senior que a un administrativo recién incorporado.
+
+### ¿Para qué sirven los grupos?
+1.  **Lanzamientos dirigidos:** Envía campañas solo al departamento de "Finanzas" o "Recursos Humanos".
+2.  **Reportes comparativos:** Analiza si el grupo de "Directivos" tiene un mayor índice de clics que el resto de la empresa.
+3.  **Automatización:** Al asignar un curso a un grupo, cualquier persona que añadidas a ese grupo en el futuro recibirá la formación automáticamente.
+
+<Info>
+  **Pro-tip:** Puedes asignar un mismo destinatario a varios grupos (ej: "Marketing" y "Sede Madrid").
+</Info>
+
+---
+
+## Importación Masiva (Excel / CSV)
+
+Añadir destinatarios uno a uno es inviable en organizaciones grandes. WhiteShark permite importar miles de registros en segundos.
+
+### Pasos para una importación exitosa:
+1.  **Descarga la Plantilla:** Usa siempre el modelo oficial `.xlsx` que proporciona la plataforma para evitar errores de formato.
+2.  **Prepara tus datos:** Asegúrate de que cada empleado tenga un email único. Puedes incluir columnas de "Departamento" y "Puesto".
+3.  **Sube el archivo:** El sistema validará los datos. Si hay errores (como emails duplicados), te mostrará exactamente en qué fila están para que los corrijas.
+4.  **Opciones inteligentes:**
+    * *Actualizar existentes:* Si el email ya existe, el sistema actualizará su departamento o puesto.
+    * *Crear grupos automáticamente:* Si en el Excel escribes un grupo que no existe en WhiteShark, el sistema lo creará por ti.
+
+---
+
+## Sincronización con Campañas
+
+Es importante entender que los destinatarios que gestionas aquí se reflejan automáticamente en las diferentes herramientas de la plataforma:
+
+* **Phishing:** Los grupos se sincronizan con el motor de envíos para que estén listos al configurar un nuevo ataque.
+* **Formación:** Al crear un curso, simplemente seleccionas los grupos deseados y el sistema generará los accesos individuales para cada empleado.
+
+---
+
+## Preguntas Frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿Qué pasa si elimino a un destinatario?" icon="trash-can">
+    El destinatario desaparecerá de las listas, pero sus estadísticas históricas en campañas pasadas se mantendrán de forma anónima para no alterar tus informes globales.
+  </Accordion>
+  <Accordion title="¿Puedo exportar mi lista de empleados?" icon="file-export">
+    Sí, puedes exportar la lista completa o solo los resultados de tus filtros actuales a formato Excel o CSV.
+  </Accordion>
+  <Accordion title="¿Existe un límite de destinatarios?" icon="users-slash">
+    El límite depende de tu plan de suscripción. El sistema te avisará cuando estés cerca de alcanzar el máximo de licencias contratadas.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+### Siguientes Pasos
+Ahora que tienes a tu equipo organizado, es hora de poner a prueba sus reflejos.
+<Card title="Simulaciones de Phishing" icon="fish-fins" href="/Manual_de_usuario/Phishing" horizontal>
+  Configura tu primer simulacro de ataque y mide la vulnerabilidad real.
+</Card>

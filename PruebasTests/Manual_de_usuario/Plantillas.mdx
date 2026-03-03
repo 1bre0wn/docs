@@ -1,0 +1,65 @@
+---
+title: "Plantillas"
+description: "Diseña y personaliza los correos electrónicos que envía la plataforma WhiteShark."
+---
+
+La sección de **Plantillas de Correo** te permite gestionar todas las comunicaciones que tus usuarios reciben.
+
+## ¿Qué puedes hacer con las plantillas?
+
+* **Personalización total:** Adapta los correos con el logo y colores de tu organización.
+* **Variables dinámicas:** Inserta automáticamente el nombre del empleado.
+* **Previsualización real:** Comprueba cómo se ve el correo.
+
+---
+
+## Tipos de Plantillas Disponibles
+
+<CardGroup cols={2}>
+  <Card title="Invitaciones" icon="envelope-open-text">
+    Para dar la bienvenida a nuevos usuarios y administradores.
+  </Card>
+  <Card title="Formación" icon="graduation-cap">
+    Avisos de nuevos cursos disponibles o certificados obtenidos.
+  </Card>
+  <Card title="Simulaciones" icon="fish-fins">
+    Emails diseñados para las campañas de concienciación.
+  </Card>
+  <Card title="Notificaciones" icon="bell">
+    Alertas del sistema y avisos de seguridad.
+  </Card>
+</CardGroup>
+
+---
+
+## Uso de Variables Dinámicas
+
+| Variable | Resultado al enviar |
+| :--- | :--- |
+| `{{.FirstName}}` | El nombre del empleado. |
+| `{{.LastName}}` | El apellido del empleado. |
+| `{{.Email}}` | El email del empleado. |
+| `{{.URL}}` | La url del phishing. |
+
+<Tip>
+  Usa `{{.FirstName}}` en el **Asunto** del correo para aumentar la tasa de apertura.
+</Tip>
+
+---
+
+## Preguntas Frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿Qué significa Plantilla por defecto?">
+    Es la que el sistema usa automáticamente por cada tipo de envío.
+  </Accordion>
+  <Accordion title="¿Puedo duplicar una plantilla?">
+    Sí, usa el botón **Duplicar** para crear una copia de seguridad antes de editar.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+### Ayuda adicional
+
+Si tienes problemas con el editor HTML, contacta con soporte técnico.

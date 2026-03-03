@@ -1,0 +1,102 @@
+---
+title: "Formación"
+description: "Educa a tus empleados con cursos interactivos, vídeos y evaluaciones de seguridad."
+---
+
+El módulo de **Formación** es el pilar educativo de WhiteShark. Permite transformar a los empleados (destinatarios) en la primera línea de defensa mediante campañas de capacitación personalizadas.
+
+---
+
+## Conceptos Fundamentales
+
+Para entender cómo funciona la formación en WhiteShark, distinguimos tres elementos:
+
+* **Biblioteca Global:** Repositorio de contenidos maestros (vídeos, tests, PDFs) creados por el Super Admin.
+* **Contenidos Habilitados:** Son los recursos de la biblioteca a los que tu empresa (tenant) tiene permiso para acceder.
+* **Campañas de Formación:** Es el "aula virtual" que creas para tus empleados, donde seleccionas qué contenidos deben completar y en qué plazo.
+
+---
+
+## Tipos de Contenido Interactivos
+
+Puedes combinar diferentes formatos para hacer la formación más amena:
+
+<CardGroup cols={2}>
+  <Card title="Vídeos" icon="play">
+    Contenido multimedia con seguimiento de visualización. El sistema detecta si el usuario ha visto el vídeo completo.
+  </Card>
+  <Card title="Evaluaciones (Tests)" icon="file-lines">
+    Cuestionarios con corrección automática. Puedes definir una nota mínima (ej: 70%) para aprobar.
+  </Card>
+  <Card title="Documentación PDF" icon="file-pdf">
+    Guías de referencia, políticas de seguridad o infografías descargables.
+  </Card>
+  <Card title="Artículos de Lectura" icon="book-open">
+    Contenido textual enriquecido para conceptos teóricos rápidos.
+  </Card>
+</CardGroup>
+
+---
+
+## Ciclo de Vida de una Campaña
+
+<Steps>
+  <Step title="Creación y Configuración">
+    Define el nombre de la campaña (ej: "Concienciación Q1") y selecciona los contenidos de la biblioteca habilitada.
+  </Step>
+  <Step title="Gestión de Actividades">
+    Ordena los contenidos y decide cuáles son **Obligatorios** y cuáles **Opcionales**. Puedes establecer fechas límite para cada actividad.
+  </Step>
+  <Step title="Asignación de Participantes">
+    Selecciona qué grupos o departamentos deben realizar la formación. Puedes importar a todos tus destinatarios con un solo clic.
+  </Step>
+  <Step title="Lanzamiento">
+    El sistema genera un **enlace único y seguro** para cada participante y lo envía por correo electrónico. No necesitan recordar contraseñas para acceder.
+  </Step>
+</Steps>
+
+---
+
+## El Portal del Participante
+
+Los empleados acceden a una interfaz simplificada (fuera del panel de administración) donde pueden:
+* Ver su progreso porcentual.
+* Realizar las actividades en cualquier orden (a menos que bloquees el avance).
+* **Descargar su Certificado:** Una vez completadas las tareas obligatorias, el sistema genera automáticamente un diploma de aprovechamiento.
+
+---
+
+## Seguimiento y Métricas
+
+Como administrador, dispones de un panel de control en tiempo real para monitorizar el éxito de la capacitación:
+
+| Métrica | Descripción |
+| :--- | :--- |
+| **% Completado** | Progreso medio de todos los participantes inscritos. |
+| **Tasa de Aprobado** | Porcentaje de usuarios que han superado los tests de evaluación. |
+| **Tiempo de Respuesta** | Cuánto tardan los empleados en empezar la formación desde que reciben el correo. |
+| **Top Participantes** | Ranking de los usuarios con mejores puntuaciones y rapidez. |
+
+---
+
+## Preguntas Frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿Pueden los usuarios repetir los tests?" icon="rotate">
+    Sí. Si un usuario no alcanza la nota mínima configurada, el sistema le permite revisar el contenido y volver a intentar el test hasta que apruebe.
+  </Accordion>
+  <Accordion title="¿Qué pasa si añado un nuevo contenido a una campaña activa?" icon="plus">
+    El contenido aparecerá automáticamente en el portal de todos los participantes. Si es obligatorio, su porcentaje de progreso bajará hasta que completen la nueva tarea.
+  </Accordion>
+  <Accordion title="¿Caducan los enlaces de acceso?" icon="clock">
+    Por defecto los enlaces son permanentes mientras la campaña esté activa. Si un empleado pierde su acceso, puedes usar el botón **"Reenviar Email"** desde la pestaña de Participantes.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+### Siguientes Pasos
+¿Has terminado de formar a tu equipo? Es hora de poner a prueba sus conocimientos con una simulación real.
+<Card title="Plantillas de Phishing" icon="envelope-open-text" href="/PruebasTests/Manual_de_usuario/Plantillas" horizontal>
+  Explora el catálogo de plantillas para diseñar tu primera campaña de simulación.
+</Card>

@@ -1,0 +1,94 @@
+---
+title: "Roles"
+description: "Configura permisos granulares y controla el acceso de tus usuarios mediante el sistema RBAC."
+---
+
+El sistema de **Control de Acceso Basado en Roles (RBAC)** de WhiteShark permite definir exactamente qué acciones puede realizar cada usuario, garantizando la seguridad y el principio de mínimo privilegio.
+
+## Niveles de Autoridad
+
+En WhiteShark existen dos niveles de gestión claramente diferenciados:
+
+<CardGroup cols={2}>
+  <Card title="Nivel Global (Super Admin)" icon="globe">
+    Gestiona toda la infraestructura, múltiples empresas (tenants) y ajustes maestros del sistema.
+  </Card>
+  <Card title="Nivel Organización (Roles de Tenant)" icon="building">
+    Gestiona únicamente los datos, usuarios y campañas de su propia empresa.
+  </Card>
+</CardGroup>
+
+---
+
+## Roles de Sistema (Predefinidos)
+
+Estos roles vienen configurados por defecto para cubrir las necesidades más comunes y **no pueden ser modificados**.
+
+### 🛡️ Rol de Control Total
+* **Super Admin:** Es el dueño de la plataforma. Puede crear nuevas empresas (tenants), modificar límites de uso, acceder al modo impersonación para dar soporte y gestionar el contenido que ven todos los clientes.
+
+### 🏢 Roles de Organización (Tenant)
+* **Administrador:** Tiene el control total de **su empresa**. Gestiona usuarios, campañas y configuraciones locales.
+* **Gestor de Campañas:** Enfocado en la ejecución. Puede crear y lanzar simulaciones de phishing y cursos.
+* **Gestor de Formación:** Especializado en educación. Gestiona el catálogo de cursos y revisa el progreso de los alumnos.
+* **Visualizador:** Rol de auditoría. Puede ver informes y estadísticas, pero no tiene permiso para crear o borrar nada.
+
+---
+
+## Diccionario de Capacidades
+
+Para que no queden dudas, aquí tienes qué puede hacer cada rol en los módulos principales:
+
+| Módulo | Super Admin | Administrador | Visualizador |
+| :--- | :---: | :---: | :---: |
+| **Configuración Global API** | ✅ | ❌ | ❌ |
+| **Crear Empresas (Tenants)** | ✅ | ❌ | ❌ |
+| **Modo Impersonación** | ✅ | ❌ | ❌ |
+| **Gestionar Usuarios Propios** | ✅ | ✅ | ❌ |
+| **Lanzar Campañas** | ✅ | ✅ | ❌ |
+| **Ver Informes / Gráficos** | ✅ | ✅ | ✅ |
+
+---
+
+## Creación de Roles Personalizados
+
+Si necesitas un perfil intermedio (ej: "Solo lectura de campañas"), puedes crearlo en **Configuración > Roles**.
+
+<Steps>
+  <Step title="Definir Identidad">
+    Asigna un nombre (ej: "Auditor Externo") y una descripción clara.
+  </Step>
+  <Step title="Selección de Permisos">
+    Marca los permisos por módulo:
+    * **Campañas:** Crear, editar o solo ver simulaciones.
+    * **Formación:** Gestionar cursos o solo ver certificados.
+    * **Destinatarios:** Importar listas de empleados o solo lectura.
+  </Step>
+  <Step title="Asignación">
+    Vincula el nuevo rol a un usuario desde la sección **Usuarios**.
+  </Step>
+</Steps>
+
+---
+
+## Preguntas Frecuentes (FAQ)
+
+<AccordionGroup>
+  <Accordion title="¿Qué pasa si un usuario no tiene ningún permiso?">
+    Verá un panel vacío con un mensaje de "Acceso Denegado". El sistema protege todos los módulos por defecto.
+  </Accordion>
+  <Accordion title="¿Puede un Administrador crear un Super Admin?">
+    No. El privilegio de Super Admin solo puede ser otorgado por otro Super Admin desde el panel global.
+  </Accordion>
+  <Accordion title="¿Los cambios en los roles son inmediatos?">
+    Sí. Si retiras un permiso mientras el usuario está navegando, la siguiente acción que intente realizar será bloqueada automáticamente.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+### Siguientes Pasos
+¿Ya tienes claro quién mandará en cada sección? Ahora prepara a tu audiencia.
+<Card title="Gestión de Destinatarios" icon="users" href="/Manual_de_usuario/Destinatarios" horizontal>
+  Aprende cómo importar la base de datos de empleados que recibirán las campañas.
+</Card>

@@ -1,0 +1,86 @@
+---
+title: "Sincronización"
+description: "Conecta WhiteShark con Microsoft 365 o Google para automatizar el acceso y la gestión de usuarios."
+---
+
+La gestión de **Grupos de Proveedor** permite que tu organización utilice sus credenciales actuales para acceder a WhiteShark. Esto elimina la necesidad de gestionar contraseñas adicionales y garantiza que, si un empleado deja la empresa, su acceso a la plataforma se revoque automáticamente.
+
+
+
+---
+
+## Proveedores Compatibles
+
+Actualmente, WhiteShark ofrece integración nativa con los principales proveedores de identidad del mercado:
+
+* **Microsoft 365 / Azure AD:** La integración más profunda, permitiendo sincronizar grupos de seguridad directamente.
+* **Google Workspace:** Autenticación rápida y sincronización de dominios.
+* **SAML 2.0:** Para proveedores personalizados como Okta, Auth0 o Ping Identity.
+
+---
+
+## Configuración de Microsoft 365 (Paso a Paso)
+
+Para activar el inicio de sesión único (SSO) con Microsoft, deberás realizar una "App Registration" en tu portal de Azure.
+
+### 1. Datos necesarios de Azure
+Para que WhiteShark pueda comunicarse con tu directorio, necesitarás copiar tres valores desde el **Portal de Azure**:
+1. **Tenant ID:** El identificador único de tu organización en Microsoft.
+2. **Client ID:** El identificador de la "aplicación" WhiteShark que crearás.
+3. **Client Secret:** Una clave privada de seguridad (WhiteShark la almacena de forma encriptada).
+
+### 2. Permisos requeridos (API Permissions)
+Asegúrate de conceder los siguientes permisos de "Microsoft Graph" con **Consentimiento del Administrador**:
+* `User.Read`: Para permitir que los usuarios inicien sesión.
+* `Group.Read.All`: Para poder leer tus grupos y asignar roles.
+* `Directory.Read.All`: Para la sincronización automática de usuarios.
+
+---
+
+## Mapeo de Grupos y Roles
+
+Una de las funciones más potentes es el **Mapeo de Roles**. Puedes decidir que los permisos en WhiteShark dependan de los grupos de tu Directorio Activo.
+
+| Grupo en tu Directorio | Rol en WhiteShark | Descripción |
+| :--- | :--- | :--- |
+| `IT-Admins` | **Administrador** | Control total sobre la plataforma y configuraciones. |
+| `Security-Team` | **Gestor de Campañas** | Pueden crear simulacros y cursos, pero no cambiar ajustes técnicos. |
+| `All-Employees` | **Visualizador** | Solo pueden entrar a ver sus propios resultados y cursos. |
+
+<Tip>
+  **Automatización:** Si activas la opción "Crear usuarios automáticamente", cualquier persona de tu empresa que intente entrar por primera vez será dada de alta en WhiteShark con el rol que le corresponda según su grupo.
+</Tip>
+
+---
+
+## Sincronización Manual vs. Automática
+
+
+
+WhiteShark mantiene tu lista de usuarios actualizada de dos formas:
+1. **Sincronización en el Login:** Cada vez que un usuario entra, sus datos (nombre, cargo, departamento) se actualizan.
+2. **Sincronización Manual:** Desde el panel de Grupos de Proveedor, puedes pulsar **"Sincronizar Ahora"** para importar a todos los empleados de golpe sin esperar a que inicien sesión.
+
+---
+
+## Resolución de Problemas Comunes
+
+<AccordionGroup>
+  <Accordion title="Error: 'Invalid Client Secret'" icon="key">
+    Esto ocurre cuando el secreto configurado en Azure ha caducado o se copió incorrectamente. Genera un nuevo secreto en Azure y actualízalo en WhiteShark.
+  </Accordion>
+  <Accordion title="Los usuarios se crean pero no tienen el rol correcto" icon="user-lock">
+    Verifica que el nombre del grupo en Azure coincida exactamente con el nombre que escribiste en la tabla de **Mapeo de Grupos**. Recuerda que distingue entre mayúsculas y minúsculas.
+  </Accordion>
+  <Accordion title="¿Qué pasa si un usuario no está en ningún grupo mapeado?" icon="user-slash">
+    Si tienes activada la opción "Solo permitir usuarios de grupos mapeados", el sistema denegará el acceso. Si está desactivada, el usuario entrará con el rol por defecto (normalmente Visualizador).
+  </Accordion>
+</AccordionGroup>
+
+---
+
+### Siguientes Pasos
+Una vez sincronizados tus usuarios, es el momento de organizarlos para tus campañas.
+<Card title="Gestión de Destinatarios" icon="users-viewfinder" href="/Manual_de_usuario/Destinatarios" horizontal>
+  Aprende a crear segmentos de empleados para ataques dirigidos.
+</Card>

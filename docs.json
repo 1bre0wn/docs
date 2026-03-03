@@ -51,9 +51,14 @@
         "tab": "Inicio",
         "groups": [
           {
+            "group": " ",
+            "pages": [
+              "PruebasTests/Onboarding/Introducción"
+            ]
+          },        
+          {
             "group": "Onboarding",
             "pages": [
-              "PruebasTests/Onboarding/Introducción",
               "PruebasTests/Onboarding/Guía_Rápida",
               "PruebasTests/Onboarding/Servicios"
             ]
@@ -62,12 +67,16 @@
             "group": "Manual de usuario",
             "pages": [
               "PruebasTests/Manual_de_usuario/Concienciacion",
+              "PruebasTests/Manual_de_usuario/Usuarios",
               "PruebasTests/Manual_de_usuario/Destinatarios",
               "PruebasTests/Manual_de_usuario/Editor",
               "PruebasTests/Manual_de_usuario/Fromacion",
               "PruebasTests/Manual_de_usuario/Informes",
+              "PruebasTests/Manual_de_usuario/Invitaciones",
+              "PruebasTests/Manual_de_usuario/simulacro de phishing",
               "PruebasTests/Manual_de_usuario/Plantillas",
-              "PruebasTests/Manual_de_usuario/Roles"
+              "PruebasTests/Manual_de_usuario/Roles",
+              "PruebasTests/Manual_de_usuario/Sincronización"
             ]
           },
           {

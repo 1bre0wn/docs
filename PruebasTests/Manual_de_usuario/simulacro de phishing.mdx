@@ -1,0 +1,86 @@
+---
+title: "Simulacros de Phishing"
+description: "Mide la resistencia de tu organización ante ataques de ingeniería social en un entorno seguro."
+---
+
+Las **Campañas de Phishing** son simulaciones de ataques reales que permiten identificar qué empleados son más propensos a caer en engaños digitales. Estos datos son vitales para personalizar la formación y reducir el riesgo real de una brecha de seguridad.
+
+
+
+---
+
+## Ciclo de Vida de una Campaña
+
+Una campaña en WhiteShark pasa por diferentes estados que puedes monitorear en tiempo real:
+
+* 🟡 **Programada:** La campaña está lista y esperando la fecha de inicio para enviar los correos.
+* 🔵 **En Curso:** Los correos están siendo enviados y el sistema está recolectando interacciones.
+* 🟢 **Completada:** El periodo de envío y recolección ha terminado. Es el momento de analizar los informes.
+* 🔴 **Cancelada:** La campaña se ha detenido manualmente antes de finalizar.
+
+---
+
+## Interpretación de Métricas Clave
+
+Cuando accedes al detalle de una campaña (`/campanias/[id]`), verás cuatro indicadores críticos:
+
+<CardGroup cols={2}>
+  <Card title="Tasa de Apertura" icon="envelope-open">
+    Indica cuántos empleados abrieron el correo. Una tasa alta sugiere que el remitente o el asunto resultaron muy convincentes.
+  </Card>
+  <Card title="Tasa de Clics" icon="mouse-pointer">
+    El porcentaje de usuarios que pulsaron en el enlace malicioso simulado. Este es el primer nivel de fallo de seguridad.
+  </Card>
+  <Card title="Envío de Datos" icon="shield-exclamation">
+    **Crítico.** Indica cuántos usuarios llegaron a introducir credenciales o información sensible en la página de destino.
+  </Card>
+  <Card title="Nivel de Riesgo" icon="biohazard">
+    Un cálculo automático basado en los resultados anteriores para determinar la vulnerabilidad del departamento o grupo.
+  </Card>
+</CardGroup>
+
+
+
+---
+
+## Análisis Detallado por Participante
+
+Dentro de cada campaña, la pestaña **Destinatarios** te permite auditar el comportamiento individual con total transparencia:
+
+1.  **Timeline de Eventos:** Mira el orden exacto de las acciones (ej: "Abrió a las 10:00, clic a las 10:02").
+2.  **Datos Técnicos:** Identifica el navegador y el tipo de dispositivo (móvil o PC) utilizado. Esto ayuda a saber si los ataques son más efectivos en dispositivos personales.
+3.  **Localización:** El sistema registra la dirección IP (si está disponible) para verificar desde qué red se produjo la interacción.
+
+---
+
+## Acciones Post-Campaña
+
+Una vez finalizada la simulación, WhiteShark facilita la gestión del riesgo detectado:
+
+* **Exportación de Informes:** Descarga los resultados en Excel o CSV para presentarlos a la dirección o al equipo de TI.
+* **Reentrenamiento Automático:** Identifica a los empleados que enviaron datos para asignarlos automáticamente a un módulo de formación de refuerzo.
+* **Comparativa Histórica:** Compara los resultados con campañas de meses anteriores para demostrar la mejora en la cultura de seguridad.
+
+---
+
+## Preguntas Frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿El empleado sabe que es un simulacro?" icon="mask">
+    No durante el proceso. El objetivo es medir el comportamiento natural. Sin embargo, puedes configurar una "Página de aterrizaje educativa" que les informe del error justo después de hacer clic.
+  </Accordion>
+  <Accordion title="¿Por qué algunos correos no se abren?" icon="filter-slash">
+    Puede deberse a filtros de spam corporativos. Asegúrate de que las direcciones de envío de WhiteShark estén en la "lista blanca" de tu servidor de correo antes de empezar.
+  </Accordion>
+  <Accordion title="¿Puedo crear mis propios diseños de correo?" icon="pen-nib">
+    Actualmente, la creación de plantillas está reservada para el Super Administrador para garantizar que los correos cumplan con los estándares técnicos y no sean bloqueados.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+### Siguientes Pasos
+Los datos de phishing nos dicen quién necesita ayuda. Ahora, veamos cómo proporcionar esa ayuda mediante la formación.
+<Card title="Campañas de Formación" icon="graduation-cap" href="/Manual_de_usuario/Formacion" horizontal>
+  Convierte las debilidades detectadas en fortalezas mediante cursos interactivos.
+</Card>
