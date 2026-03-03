@@ -1,0 +1,76 @@
+---
+title: "Invitaciones"
+description: "Invita a nuevos administradores y gestores a unirse a tu organización en WhiteShark."
+---
+
+El **Sistema de Invitaciones** es la forma segura de añadir nuevos colaboradores a tu equipo. En lugar de crear cuentas manualmente, envías un enlace de registro único que permite al invitado configurar su propia contraseña, garantizando la privacidad y el control de acceso desde el primer momento.
+
+---
+
+## Cómo enviar una invitación
+
+El proceso se divide en tres pasos sencillos para asegurar que el nuevo usuario tenga exactamente los permisos que necesita:
+
+### 1. Datos del Invitado
+Introduce el email, nombre y apellidos. Puedes añadir un **mensaje personalizado** que aparecerá en el correo de bienvenida para darle un toque más humano y profesional al onboarding.
+
+### 2. Asignación de Rol
+Este es el paso más importante. Debes elegir qué podrá hacer el usuario en la plataforma:
+* **Administrador de Organización:** Acceso total a todas las funciones del tenant.
+* **Gestor de Campañas:** Puede crear y ver resultados de phishing y formación, pero no gestionar otros usuarios.
+* **Analista (Lectura):** Solo puede ver informes y estadísticas, sin capacidad de modificar nada.
+
+<Tip>
+  Antes de enviar, el sistema te mostrará una vista previa de los permisos asociados al rol para que no haya errores.
+</Tip>
+
+### 3. Confirmación
+Revisa que los datos sean correctos. Una vez enviada, el sistema generará un **token de seguridad único** válido por 7 días.
+
+---
+
+## Estados de la Invitación
+
+En la tabla de `/invitations`, puedes rastrear el progreso de cada alta:
+
+| Estado | Significado | Acción recomendada |
+| :--- | :--- | :--- |
+| 🟡 **Pendiente** | El email ha sido enviado pero el usuario no se ha registrado. | Puedes pulsar "Reenviar" si el usuario no lo encuentra. |
+| 🟢 **Aceptada** | El usuario ya completó su registro y tiene acceso. | Ninguna, el usuario ya aparece en la sección de Usuarios. |
+| 🔘 **Expirada** | Han pasado más de 7 días sin acción. El link ya no funciona. | Debes eliminar la invitación y enviar una nueva. |
+| 🔴 **Revocada** | Un administrador canceló la invitación antes de ser usada. | El link ha quedado invalidado por seguridad. |
+
+---
+
+## Seguridad y Control
+
+WhiteShark implementa varias capas de protección en este proceso:
+
+* **Tokens de un solo uso:** Una vez que el usuario se registra, el enlace de la invitación queda invalidado permanentemente.
+* **Expiración automática:** Para evitar que enlaces antiguos queden en bandejas de entrada, las invitaciones caducan a la semana.
+* **Revocación inmediata:** Si te equivocas de email o decides no dar el acceso, puedes revocar la invitación en cualquier momento desde la tabla de gestión.
+* **Restricción de Email:** No se pueden invitar emails que ya existan en el sistema o que pertenezcan a otros tenants activos.
+
+---
+
+## Preguntas Frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿Qué pasa si el invitado no recibe el correo?" icon="envelope-circle-check">
+    Primero, pide al usuario que revise su carpeta de **Spam**. Si no está ahí, puedes usar la opción **"Copiar Link"** desde los detalles de la invitación y enviárselo directamente por chat o correo corporativo.
+  </Accordion>
+  <Accordion title="¿Puedo cambiar el rol de alguien después de invitarlo?" icon="user-gear">
+    Si aún no ha aceptado, lo mejor es revocar la invitación y enviar una nueva con el rol correcto. Si ya aceptó, deberás cambiar su rol desde la sección de **Usuarios**.
+  </Accordion>
+  <Accordion title="¿Cuántas personas puedo invitar?" icon="users">
+    El número de administradores permitidos depende de tu plan contratado. Si intentas invitar a alguien y has llegado al límite, el sistema te avisará.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+### Siguientes Pasos
+Una vez que tu equipo de gestión esté dentro, es hora de empezar a medir la seguridad de la empresa.
+<Card title="Gestión de Destinatarios" icon="address-book" href="/Manual_de_usuario/Destinatarios" horizontal>
+  Carga la base de datos de empleados para empezar tus campañas.
+</Card>

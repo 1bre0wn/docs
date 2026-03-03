@@ -1,0 +1,86 @@
+---
+title: "Vista de Usuarios"
+description: "Administra los accesos, roles y perfiles de los colaboradores de tu organización."
+---
+
+La vista de **Usuarios** permite gestionar a todas las personas internas que tienen credenciales para entrar al panel de WhiteShark. A diferencia de los destinatarios, estos usuarios tienen permisos específicos para crear campañas, ver informes o administrar la plataforma.
+
+---
+
+## Diferencia Clave: ¿Usuario o Destinatario?
+
+Es común confundirlos, pero en WhiteShark tienen propósitos opuestos:
+
+| Característica | 👤 Usuarios | 🎯 Destinatarios |
+| :--- | :--- | :--- |
+| **Acceso al Panel** | ✅ Tienen usuario y contraseña. | ❌ No pueden entrar al panel. |
+| **Permisos (RBAC)** | ✅ Tienen roles (Admin, Gestor...). | ❌ No tienen permisos. |
+| **Acción Principal** | Gestionar y crear contenido. | Recibir phishing y formación. |
+| **Ubicación** | Sección `/users` | Sección `/destinatarios` |
+
+<Tip>
+  Si quieres que un Administrador también reciba pruebas de phishing, deberás darlo de alta **en ambas secciones**.
+</Tip>
+
+---
+
+## Estados de Usuario
+
+En la tabla principal verás diferentes indicadores de color que definen la situación de cada cuenta:
+
+* 🟢 **Activo:** El usuario puede trabajar normalmente.
+* 🟡 **Pendiente:** Se ha enviado la invitación pero el usuario aún no ha activado su cuenta.
+* 🟠 **Cambio Requerido:** El usuario debe actualizar su contraseña en el próximo inicio de sesión.
+* 🔴 **Inactivo:** La cuenta está suspendida. El usuario no puede entrar aunque sus datos se conservan.
+
+---
+
+## Gestión de Perfiles
+
+Al hacer clic en un usuario, accederás a su expediente detallado dividido en cuatro áreas:
+
+### 1. Información General
+Datos básicos como nombre, email de contacto, teléfono y avatar. Desde aquí puedes ver cuándo fue la última vez que se conectó.
+
+### 2. Roles y Permisos
+Muestra el rol actual (ej: "Gestor de Campañas"). Los administradores pueden cambiar el rol aquí mismo para ampliar o reducir las capacidades del usuario.
+
+
+### 3. Historial de Actividad
+Un registro de auditoría que muestra las últimas acciones realizadas por el usuario: campañas creadas, usuarios invitados o cambios de configuración.
+
+### 4. Seguridad y Cuenta
+Permite forzar el restablecimiento de contraseña, activar la **Autenticación de Dos Factores (2FA)** o desactivar la cuenta permanentemente.
+
+---
+
+## Flujos de Trabajo Comunes
+
+### Invitar a un nuevo colaborador
+1. Ve a **Usuarios** y pulsa en **"Nuevo Usuario"**.
+2. Rellena los datos básicos y asigna un **Rol**.
+3. Asegúrate de marcar la casilla **"Enviar email de bienvenida"** para que reciba sus instrucciones de acceso automáticamente.
+
+### Desactivar a un usuario que deja la empresa
+1. Localiza al usuario en la tabla.
+2. Accede a su perfil y cambia el interruptor de estado a **Inactivo**.
+3. **Resultado:** Sus tokens de sesión se invalidarán al instante y no podrá volver a entrar, pero sus informes y acciones pasadas se mantendrán para el histórico de la empresa.
+
+---
+
+<AccordionGroup>
+  <Accordion title="¿Por qué no puedo borrar a un usuario?" icon="trash-can">
+    WhiteShark utiliza un sistema de **borrado lógico (soft delete)**. No recomendamos borrar usuarios que hayan gestionado campañas, ya que se perdería la trazabilidad en los informes. Es mejor marcarlos como **Inactivos**.
+  </Accordion>
+  <Accordion title="El usuario no ha recibido el email de bienvenida" icon="envelope">
+    Pide al usuario que revise su carpeta de Spam. Si sigue sin aparecer, puedes usar el botón **"Resetear Contraseña"** desde su perfil para forzar un nuevo envío de credenciales.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+### Siguientes Pasos
+Ahora que sabes gestionar quién accede al panel, es hora de importar a quienes recibirán las pruebas.
+<Card title="Gestión de Destinatarios" icon="users-target" href="/Manual_de_usuario/Destinatarios" horizontal>
+  Configura las listas de empleados, departamentos y grupos para tus simulaciones.
+</Card>
