@@ -1,0 +1,46 @@
+---
+title: "Superadmin"
+description: "La vista de administración global: gestión de organizaciones, biblioteca de contenidos y asignaciones."
+---
+
+La vista de **Superadmin** es el nivel de gestión global de la plataforma, reservado al equipo de Legitec. Desde ella se administran todas las organizaciones (tenants) y los recursos compartidos.
+
+<Note>
+  Esta sección solo es visible para cuentas con privilegio de superadministrador. Los administradores de organización no la ven ni la necesitan: toda su gestión está en el resto del manual.
+</Note>
+
+---
+
+## Gestión de organizaciones
+
+Cada cliente de ConcienciaCiber es un **tenant** con sus datos completamente aislados. Desde la vista de superadmin se puede:
+
+* **Crear y configurar organizaciones** — nombre, logotipos (versión clara y oscura) y datos de contacto.
+* **Consultar los usuarios de cada organización** — quién tiene acceso al panel y con qué rol.
+* **Ver el estado global** — campañas activas, alumnos y progreso de cada tenant de un vistazo.
+
+## Biblioteca global de contenidos
+
+Los contenidos formativos (vídeos, tests, documentos) se crean una vez en la **biblioteca global** y se habilitan por organización:
+
+<Steps>
+  <Step title="Crear el contenido">
+    El superadmin sube el contenido maestro a la biblioteca global.
+  </Step>
+  <Step title="Habilitarlo por organización">
+    Se asigna a los tenants que deben poder usarlo en sus campañas.
+  </Step>
+  <Step title="La organización lo usa">
+    Los administradores del tenant ven el contenido habilitado y lo incorporan a sus campañas de formación.
+  </Step>
+</Steps>
+
+Este modelo garantiza que el material se mantiene centralizado y actualizado: una corrección en la biblioteca llega a todas las organizaciones que lo usan.
+
+## Asignación de campañas
+
+Del mismo modo, las campañas de phishing pueden **asignarse a organizaciones concretas**. Combinado con los [roles restrictivos](/manual/roles), permite que un gestor de un tenant solo vea las campañas que el superadmin le ha asignado.
+
+## Permisos por organización
+
+El superadmin controla también qué **módulos** tiene disponibles cada organización (campañas de phishing, formación, o ambos), adaptando la plataforma a lo contratado por cada cliente.

@@ -1,0 +1,49 @@
+---
+title: "Fortinet"
+description: "Permite la entrega de las simulaciones de ConcienciaCiber en entornos protegidos por FortiGate y FortiMail."
+---
+
+Si tu organización utiliza **FortiGate** (firewall) o **FortiMail** (pasarela de correo), debes añadir los remitentes de ConcienciaCiber a las listas de permitidos para que los simulacros lleguen a los buzones sin ser bloqueados ni marcados.
+
+<Info>
+  Los dominios e IPs de envío pueden variar según la configuración de tu contrato. **Solicita a [soporte](mailto:eperez@legitec.com) la lista actualizada de dominios e IPs de simulación** antes de empezar.
+</Info>
+
+---
+
+## FortiMail: lista de permitidos
+
+<Steps>
+  <Step title="Accede a la consola de FortiMail">
+    Entra en la interfaz de administración con una cuenta con permisos de escritura sobre políticas.
+  </Step>
+  <Step title="Crea una regla de acceso">
+    Ve a **Policy → Access Control** y crea una nueva regla de recepción (Receive) con acción **Relay/Accept** para las IPs de envío facilitadas por soporte.
+  </Step>
+  <Step title="Exime del análisis antispam">
+    En **Profile → AntiSpam**, añade los dominios de simulación a la **safe list** del perfil aplicado a tu dominio, para que los correos no se puntúen como spam.
+  </Step>
+  <Step title="Ordena la regla correctamente">
+    Asegúrate de que la regla queda **por encima** de las reglas generales de filtrado para que se evalúe primero.
+  </Step>
+</Steps>
+
+## FortiGate: exclusión de filtrado web
+
+Para que los enlaces de las páginas de simulación funcionen cuando el empleado hace clic:
+
+1. Ve a **Security Profiles → Web Filter**.
+2. En el perfil aplicado a la navegación de usuarios, añade los dominios de simulación como **URL Filter** con acción **Allow** (o **Exempt** si usas inspección SSL).
+3. Aplica los cambios y verifica que la política afectada es la que usan los equipos de los empleados.
+
+<Warning>
+  Si FortiGate reescribe o bloquea las URLs de simulación, las métricas de clics de la campaña no serán fiables. Haz una prueba con un buzón piloto antes de lanzar la campaña real.
+</Warning>
+
+## Verificación
+
+Envía una campaña de prueba a 2 o 3 buzones internos y comprueba que:
+
+* El correo llega a la **bandeja de entrada** (no a cuarentena ni spam).
+* El enlace de la simulación **abre correctamente** desde la red corporativa.
+* La interacción queda registrada en el informe de la campaña.

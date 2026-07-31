@@ -1,0 +1,40 @@
+---
+title: "Imágenes"
+description: "Configura la carga de imágenes externas para que los correos de simulación se muestren correctamente."
+---
+
+Muchos correos de simulación incluyen **imágenes alojadas externamente** (logotipos, cabeceras corporativas). Los clientes de correo las bloquean por defecto, lo que tiene dos efectos sobre las campañas:
+
+* El correo se ve **incompleto o sospechoso**, restando realismo a la simulación.
+* La métrica de **apertura** (que se basa en la carga de una imagen de seguimiento) no se registra.
+
+---
+
+## Microsoft 365 / Outlook
+
+Para que las imágenes de los remitentes de simulación se carguen automáticamente:
+
+<Steps>
+  <Step title="Configura la entrega avanzada">
+    Si aún no lo has hecho, sigue la guía de [whitelisting de Microsoft 365](/whitelisting/microsoft-365): la política de simulación de phishing ya exime a estos remitentes de la mayoría de bloqueos.
+  </Step>
+  <Step title="Añade los remitentes como seguros (opcional)">
+    Para forzar la carga de imágenes en Outlook, añade los dominios de simulación a la lista de **remitentes seguros** mediante directiva (Exchange Online: `Set-MailboxJunkEmailConfiguration -TrustedSendersAndDomains`).
+  </Step>
+</Steps>
+
+## Google Workspace / Gmail
+
+Gmail carga las imágenes a través de su proxy. Con el [whitelisting de Google](/whitelisting/google-workspace) correctamente configurado, las imágenes se muestran sin acción adicional del usuario.
+
+## Cómo afecta a las métricas
+
+| Situación | Efecto en el informe |
+| :--- | :--- |
+| Imágenes bloqueadas | La apertura no se registra; el clic sí. |
+| Imágenes permitidas | Apertura y clic se registran con normalidad. |
+| Proxy de imágenes (Gmail) | La apertura se registra en la primera visualización. |
+
+<Tip>
+  Si en una campaña ves muchos **clics sin apertura previa**, casi siempre es señal de que las imágenes están bloqueadas: el destinatario abrió el correo, pero la imagen de seguimiento no llegó a cargarse.
+</Tip>

@@ -1,0 +1,47 @@
+---
+title: "Enlace a tenant (usuarios)"
+description: "Conecta tu organización con Microsoft 365 para el acceso de administradores y la importación de empleados."
+---
+
+El **enlace a tenant** conecta tu organización de ConcienciaCiber con vuestro tenant de **Microsoft 365**, habilitando dos funciones:
+
+1. **Inicio de sesión corporativo** — los administradores acceden al panel con su cuenta de Microsoft, sin contraseña adicional.
+2. **Importación de empleados** — los destinatarios se importan directamente desde el directorio de M365, sin ficheros CSV.
+
+---
+
+## Requisitos
+
+* Una cuenta de **administrador global** (o con permisos de consentimiento) de vuestro tenant de Microsoft 365, necesaria solo durante la autorización inicial.
+* Vuestro usuario de ConcienciaCiber con rol de administrador de organización.
+
+## Autorizar la conexión
+
+<Steps>
+  <Step title="Inicia la vinculación">
+    En el panel, ve a la importación de destinatarios y elige la opción **Microsoft 365**. Se abrirá una ventana de autorización de Microsoft.
+  </Step>
+  <Step title="Concede el consentimiento">
+    Inicia sesión con la cuenta de administrador de vuestro tenant y acepta los permisos solicitados (lectura de usuarios y grupos del directorio).
+  </Step>
+  <Step title="Confirmación">
+    La ventana se cierra automáticamente y ConcienciaCiber queda vinculado a vuestro tenant. A partir de aquí, cualquier administrador de la organización puede importar empleados.
+  </Step>
+</Steps>
+
+<Note>
+  El consentimiento es de **solo lectura sobre el directorio**: ConcienciaCiber nunca modifica datos en vuestro Microsoft 365.
+</Note>
+
+## Qué se sincroniza
+
+* **Empleados** — nombre y correo, para darlos de alta como destinatarios.
+* **Grupos** — para importar departamentos completos y mantener la segmentación de campañas.
+
+## Revocar la conexión
+
+Podéis revocar el acceso en cualquier momento desde vuestro portal de Microsoft Entra (**Aplicaciones empresariales → ConcienciaCiber → Eliminar**). La revocación no borra los destinatarios ya importados; solo impide futuras sincronizaciones.
+
+<Tip>
+  Si al autorizar aparece un error de **URI de redirección** (AADSTS50011), contacta con [soporte](mailto:eperez@legitec.com): es una configuración pendiente en el registro de la aplicación, no un problema de vuestro tenant.
+</Tip>

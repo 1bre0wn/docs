@@ -1,0 +1,84 @@
+---
+title: "Sincronización"
+description: "Conecta ConcienciaCiber con Microsoft 365: acceso corporativo e importación de empleados."
+---
+
+ConcienciaCiber se integra con **Microsoft 365** para eliminar la gestión manual de cuentas: los administradores entran con su cuenta corporativa y los empleados se importan directamente desde el directorio.
+
+---
+
+## Qué incluye la integración
+
+<CardGroup cols={2}>
+  <Card title="Inicio de sesión con Microsoft" icon="right-to-bracket">
+    Los usuarios del panel pueden acceder con su cuenta de Microsoft, sin contraseña adicional de ConcienciaCiber.
+  </Card>
+  <Card title="Importación de empleados" icon="users">
+    Los destinatarios se importan desde el directorio de M365 en unos clics, sin ficheros CSV.
+  </Card>
+</CardGroup>
+
+---
+
+## Iniciar sesión con Microsoft
+
+En la pantalla de acceso al panel, pulsa **Continuar con Microsoft** e identifícate con tu cuenta corporativa. La primera vez, Microsoft te pedirá confirmar el acceso; a partir de entonces el acceso es inmediato.
+
+<Note>
+  Tu cuenta debe existir previamente en ConcienciaCiber (creada por invitación o por un administrador). El inicio de sesión con Microsoft autentica, no da de alta.
+</Note>
+
+---
+
+## Importar empleados desde Microsoft 365
+
+<Steps>
+  <Step title="Abre la importación">
+    En **Destinatarios**, elige la opción de importar desde **Microsoft 365**.
+  </Step>
+  <Step title="Autoriza el acceso">
+    Se abre una ventana de Microsoft. La primera vez, un **administrador de vuestro tenant** debe conceder el consentimiento de lectura del directorio (ver [Enlace a tenant](/whitelisting/configuracion/enlace-tenant)).
+  </Step>
+  <Step title="Selecciona a quién importar">
+    Elige usuarios o grupos completos del directorio. ConcienciaCiber importa nombre y correo de cada persona.
+  </Step>
+  <Step title="Revisa el resultado">
+    Los empleados importados aparecen en la vista de [Destinatarios](/manual/destinatarios), listos para incluirse en campañas.
+  </Step>
+</Steps>
+
+<Tip>
+  La importación es **idempotente**: si repites la operación, los empleados ya existentes no se duplican; solo se añaden los nuevos.
+</Tip>
+
+---
+
+## Privacidad y permisos
+
+* El acceso al directorio es de **solo lectura**: ConcienciaCiber nunca escribe en vuestro Microsoft 365.
+* Solo se almacenan los datos imprescindibles para las campañas: nombre y correo electrónico.
+* El consentimiento puede revocarse en cualquier momento desde vuestro portal de Microsoft Entra.
+
+---
+
+## Resolución de problemas
+
+<AccordionGroup>
+  <Accordion title="Error AADSTS50011 (URI de redirección)" icon="triangle-exclamation">
+    Aparece si el registro de la aplicación no tiene configurada la URL de retorno. Es una configuración del lado de Legitec: contacta con [soporte](mailto:eperez@legitec.com) y lo resolvemos al momento.
+  </Accordion>
+  <Accordion title="La ventana de Microsoft no se abre" icon="window-restore">
+    Comprueba que el navegador no esté bloqueando las ventanas emergentes para app.concienciaciber.com.
+  </Accordion>
+  <Accordion title="No aparezco como administrador tras entrar con Microsoft" icon="user-lock">
+    El inicio de sesión no cambia tu rol. Si necesitas más permisos, pide a un administrador de tu organización que ajuste tu [rol](/manual/roles).
+  </Accordion>
+</AccordionGroup>
+
+---
+
+### Siguientes pasos
+
+<Card title="Gestión de destinatarios" icon="users-viewfinder" href="/manual/destinatarios" horizontal>
+  Organiza a los empleados importados en grupos para segmentar tus campañas.
+</Card>
