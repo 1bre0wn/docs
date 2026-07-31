@@ -1,0 +1,49 @@
+---
+title: "Barracuda"
+description: "Permite la entrega de las simulaciones de ConcienciaCiber en entornos protegidos por Barracuda Email Security."
+---
+
+Si tu organización utiliza **Barracuda Email Security Gateway** o **Barracuda Email Protection** (cloud), debes añadir los remitentes de ConcienciaCiber como exenciones para que los simulacros no se bloqueen ni se marquen como spam.
+
+<Info>
+  Los dominios e IPs de envío pueden variar según la configuración de tu contrato. **Solicita a [soporte](mailto:eperez@legitec.com) la lista actualizada de dominios e IPs de simulación** antes de empezar.
+</Info>
+
+---
+
+## Barracuda Email Protection (cloud)
+
+<Steps>
+  <Step title="Accede al panel">
+    Entra en tu consola de Barracuda con una cuenta de administrador.
+  </Step>
+  <Step title="Añade exenciones por IP">
+    Ve a **Inbound Settings → IP Address Policies** y añade las IPs de envío con la política **Exempt**.
+  </Step>
+  <Step title="Añade exenciones por dominio">
+    En **Inbound Settings → Sender Policies**, añade los dominios de simulación con la política **Exempt**.
+  </Step>
+  <Step title="Excluye los enlaces del reescrito">
+    En **Link Protection**, añade los dominios de simulación a las exclusiones para que Barracuda no reescriba las URLs y las métricas de clics sean fiables.
+  </Step>
+</Steps>
+
+## Barracuda Email Security Gateway (appliance)
+
+Si usas el appliance local:
+
+1. Ve a **Block/Accept → IP Filters** y añade las IPs de envío como **Allow**.
+2. En **Block/Accept → Sender Domain Filters**, añade los dominios de simulación como **Allow**.
+3. Comprueba en **Basic → Spam Checking** que las exenciones tienen prioridad sobre el escaneo bayesiano.
+
+<Warning>
+  Barracuda aplica las políticas en orden: las exenciones por IP se evalúan antes que las de dominio. Configura **ambas** para máxima fiabilidad.
+</Warning>
+
+## Verificación
+
+Envía una campaña de prueba a 2 o 3 buzones internos y comprueba que:
+
+* El correo llega a la **bandeja de entrada** (no a cuarentena ni spam).
+* El enlace de la simulación **abre correctamente** desde la red corporativa.
+* La interacción queda registrada en el informe de la campaña.

@@ -1,0 +1,54 @@
+---
+title: "Concienciación"
+description: "El ciclo completo de concienciación: del simulacro de phishing a la formación y la mejora continua."
+---
+
+El módulo de **Concienciación** es el corazón de ConcienciaCiber. Su objetivo es reducir el riesgo humano de tu organización mediante un ciclo continuo que combina **evaluación** (simulacros de phishing) y **educación** (campañas de formación).
+
+---
+
+## El ciclo de concienciación
+
+<Steps>
+  <Step title="Evalúa con simulacros">
+    Lanza una [campaña de phishing simulado](/manual/simulacros-phishing) para medir el estado real de tu organización: quién abre, quién hace clic y quién llega a entregar credenciales.
+  </Step>
+  <Step title="Forma a tu equipo">
+    Con los resultados en la mano, crea una [campaña de formación](/manual/formacion) dirigida a toda la plantilla o a los grupos que más lo necesitan.
+  </Step>
+  <Step title="Mide el progreso">
+    Sigue el avance desde los [informes](/manual/informes): progreso de la formación, tasas de aprobado y evolución del riesgo.
+  </Step>
+  <Step title="Repite y mejora">
+    Programa nuevos simulacros periódicos para verificar que la formación se traduce en un cambio real de comportamiento.
+  </Step>
+</Steps>
+
+---
+
+## Buenas prácticas
+
+<AccordionGroup>
+  <Accordion title="Empieza con una línea base" icon="ruler">
+    Antes de formar, lanza un primer simulacro sin avisar. Ese resultado inicial es tu **línea base**: sin él no podrás demostrar la mejora.
+  </Accordion>
+  <Accordion title="No castigues, educa" icon="heart">
+    El objetivo de los simulacros no es señalar a nadie. Comunica los resultados de forma agregada y usa los fallos como oportunidad de formación, no de sanción.
+  </Accordion>
+  <Accordion title="Varía la dificultad" icon="stairs">
+    Alterna plantillas sencillas (remitentes genéricos, errores evidentes) con otras avanzadas (suplantación de proveedores reales) para entrenar todos los niveles.
+  </Accordion>
+  <Accordion title="Mantén una cadencia" icon="calendar">
+    La concienciación funciona por repetición. Una cadencia trimestral de simulacro + refuerzo formativo mantiene la alerta sin generar fatiga.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Requisitos previos
+
+Antes de lanzar tu primera campaña asegúrate de tener:
+
+1. **Destinatarios importados** — manualmente, por CSV o [desde Microsoft 365](/manual/sincronizacion). Consulta la vista de [Destinatarios](/manual/destinatarios).
+2. **Whitelisting configurado** — imprescindible para que los correos de simulación no acaben en spam. Sigue la guía de tu proveedor: [Microsoft 365](/whitelisting/microsoft-365) o [Google Workspace](/whitelisting/google-workspace).
+3. **Usuarios y roles definidos** — decide quién gestionará las campañas desde el panel con el sistema de [roles](/manual/roles).

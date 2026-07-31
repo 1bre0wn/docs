@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "ConcienciaCiber",
   "colors": {
     "primary": "#FED141",
     "light": "#FED141",
@@ -11,112 +11,58 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentación",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Empezar",
             "pages": [
               "index",
-              "essentials/quickstart",
-              "essentials/development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Inicio",
-        "groups": [
-          {
-            "group": " ",
-            "pages": [
-              "PruebasTests/Onboarding/Introducción"
-            ]
-          },        
-          {
-            "group": "Onboarding",
-            "pages": [
-              "PruebasTests/Onboarding/Guía_Rápida",
-              "PruebasTests/Onboarding/Servicios"
+              "primeros-pasos/guia-rapida",
+              "primeros-pasos/servicios"
             ]
           },
           {
             "group": "Manual de usuario",
             "pages": [
-              "PruebasTests/Manual_de_usuario/Concienciacion",
-              "PruebasTests/Manual_de_usuario/Usuarios",
-              "PruebasTests/Manual_de_usuario/Destinatarios",
-              "PruebasTests/Manual_de_usuario/Editor",
-              "PruebasTests/Manual_de_usuario/Fromacion",
-              "PruebasTests/Manual_de_usuario/Informes",
-              "PruebasTests/Manual_de_usuario/Invitaciones",
-              "PruebasTests/Manual_de_usuario/simulacro de phishing",
-              "PruebasTests/Manual_de_usuario/Plantillas",
-              "PruebasTests/Manual_de_usuario/Roles",
-              "PruebasTests/Manual_de_usuario/Sincronización"
+              "manual/concienciacion",
+              "manual/simulacros-phishing",
+              "manual/formacion",
+              "manual/onboarding",
+              "manual/portal-alumno",
+              "manual/destinatarios",
+              "manual/usuarios",
+              "manual/invitaciones",
+              "manual/roles",
+              "manual/plantillas-correo",
+              "manual/editor",
+              "manual/informes",
+              "manual/sincronizacion",
+              "manual/superadmin"
             ]
           },
           {
-            "group": "WhiteListing",
+            "group": "Whitelisting",
             "pages": [
-              "PruebasTests/Whitelisting/Google Whitelisting",
-              "PruebasTests/Whitelisting/Microsoft M365 Whitelisting"
+              "whitelisting/microsoft-365",
+              "whitelisting/google-workspace",
+              "whitelisting/fortinet",
+              "whitelisting/sophos",
+              "whitelisting/barracuda"
             ]
           },
           {
-            "group": "Noticias",
+            "group": "Configuración avanzada",
             "pages": [
-              "PruebasTests/Noticias/Noticias Destacadas"
+              "whitelisting/configuracion/enlace-tenant",
+              "whitelisting/configuracion/imagenes",
+              "whitelisting/configuracion/report-email"
             ]
           },
           {
-            "group": "Precios",
+            "group": "Recursos",
             "pages": [
-              "PruebasTests/Precios/Basico",
-              "PruebasTests/Precios/Premium"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "recursos/noticias",
+              "recursos/precios"
             ]
           }
         ]
@@ -125,52 +71,47 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Plataforma",
+          "href": "https://app.concienciaciber.com",
+          "icon": "shield-halved"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Legitec",
+          "href": "https://www.legitec.com",
+          "icon": "building-shield"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png"
   },
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Soporte",
+        "href": "mailto:eperez@legitec.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Ir a la plataforma",
+      "href": "https://app.concienciaciber.com"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/",
-      "github": "https://github.com/",
-      "linkedin": "https://linkedin.com/"
+      "website": "https://www.legitec.com",
+      "linkedin": "https://www.linkedin.com/company/legitec"
     }
   }
 }

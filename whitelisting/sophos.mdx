@@ -1,0 +1,49 @@
+---
+title: "Sophos"
+description: "Permite la entrega de las simulaciones de ConcienciaCiber en entornos protegidos por Sophos Email y Sophos Firewall."
+---
+
+Si tu organización utiliza **Sophos Email** (Sophos Central) o **Sophos Firewall**, sigue esta guía para que los correos de simulación lleguen a los buzones y los enlaces funcionen correctamente.
+
+<Info>
+  Los dominios e IPs de envío pueden variar según la configuración de tu contrato. **Solicita a [soporte](mailto:eperez@legitec.com) la lista actualizada de dominios e IPs de simulación** antes de empezar.
+</Info>
+
+---
+
+## Sophos Email (Sophos Central)
+
+<Steps>
+  <Step title="Accede a Sophos Central">
+    Entra en [central.sophos.com](https://central.sophos.com) con una cuenta de administrador.
+  </Step>
+  <Step title="Abre las listas de permitidos">
+    Ve a **Products → Email Protection → Configure → Allow/Block Lists**.
+  </Step>
+  <Step title="Añade los remitentes">
+    En la pestaña **Allow**, añade los dominios de simulación (por dominio) y las IPs de envío (por dirección IP) facilitadas por soporte.
+  </Step>
+  <Step title="Desactiva el reescrito de URLs para estos remitentes">
+    En **Email Protection → Settings → Time of Click Protection**, añade los dominios de simulación como excepción para que Sophos no reescriba los enlaces y las métricas de clics sean fiables.
+  </Step>
+</Steps>
+
+## Sophos Firewall
+
+Para la navegación hacia las páginas de simulación:
+
+1. Ve a **Protect → Web → Exceptions**.
+2. Crea una excepción nueva que **omita el escaneo HTTPS y el filtrado** para los dominios de simulación.
+3. Aplica la excepción a las redes de usuario.
+
+<Warning>
+  Si usas también **Intercept X** en los endpoints, comprueba que los dominios de simulación no estén bloqueados por la protección web local del agente.
+</Warning>
+
+## Verificación
+
+Envía una campaña de prueba a 2 o 3 buzones internos y comprueba que:
+
+* El correo llega a la **bandeja de entrada** (no a cuarentena ni spam).
+* El enlace de la simulación **abre correctamente** desde la red corporativa.
+* La interacción queda registrada en el informe de la campaña.
